@@ -3,8 +3,8 @@ package ebt.common;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Item;
 
-public class BlazeClump extends Item {
-	public BlazeClump(int blockID) {
+public class BlazeIngot extends Item {
+	public BlazeIngot(int blockID) {
 		super(blockID);
 		maxStackSize = 64;
 		this.setCreativeTab(CreativeTabs.tabMaterials);

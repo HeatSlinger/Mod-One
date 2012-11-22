@@ -27,18 +27,29 @@ public class EverythingButThe {
 	@Instance
 	//Declaring Instance//
 	public static EverythingButThe instance = new EverythingButThe();
+	
 		
 	//Declaring Blocks//
 	public static Block chromiumOre;
 	public static Block magnesiumOre;
+	public static Block nickelOre;
+	
 	
 	//Declaring Items//
 	public static Item blazeClump;
+	public static Item blazeIngot;
+	public static Item silicon;
+	
 	
 	//Declaring Id's//
 	public int chromiumOreBlockID = 250;
 	public int magnesiumOreBlockID = 251;
+	public int nickelOreBlockID = 252;
+	
 	public int blazeClumpID = 1200;
+	public int blazeIngotID = 1201;
+	public int siliconID = 1202;
+	
 	
 	//The Client and Common Proxy//
 	@SidedProxy(clientSide = "ebt.client.ClientProxy", serverSide = "ebt.common.CommonProxy")
@@ -53,6 +64,11 @@ public class EverythingButThe {
 		
 		int chromiumOreOreBlockID = config.getBlock("Chromium Ore Block ID", Configuration.CATEGORY_BLOCK, 120).getInt();
 		int magnesiumOreBlockID = config.getBlock("Magnesium Ore Block ID", Configuration.CATEGORY_BLOCK, 121).getInt();
+		int nickelOreBlockID = config.getBlock("Nickel Ore Block ID", Configuration.CATEGORY_BLOCK, 122).getInt();
+		
+		int blazeClumpID = config.getItem("Blaze Clump ID", Configuration.CATEGORY_ITEM, 1200).getInt();
+		int blazeIngotID = config.getItem("Blaze Ingot ID", Configuration.CATEGORY_ITEM, 1201).getInt();
+		int siliconID = config.getItem("Silicon ID", Configuration.CATEGORY_ITEM, 1202).getInt();
 		
 		config.save();
 	}
@@ -66,20 +82,20 @@ public class EverythingButThe {
 		//Defining Blocks//
 		chromiumOre = new ChromiumOre(chromiumOreBlockID).setBlockName("chromiumOreOre");
 		magnesiumOre = new MagnesiumOre(magnesiumOreBlockID).setBlockName("magnesiumOre");
+		nickelOre = new NickelOre(nickelOreBlockID).setBlockName("nickelOre");
 		
 		
 		//Defining Items//
 		blazeClump = new BlazeClump(blazeClumpID).setItemName("blazeClump");
+		blazeIngot = new BlazeIngot(blazeIngotID).setItemName("blazeIngot");
+		silicon = new Silicon(siliconID).setItemName("silicon");
 		
 		
 		//Registering Blocks//
 		GameRegistry.registerBlock(chromiumOre);
 		GameRegistry.registerBlock(magnesiumOre);
+		GameRegistry.registerBlock(nickelOre);
 		GameRegistry.registerWorldGenerator(new WorldGen());
-		
-		
-		
-		//Ore Registration//
 		
 		
 		//Adding Recipes//
@@ -95,7 +111,11 @@ public class EverythingButThe {
 		//Registering Names//
 		LanguageRegistry.addName(chromiumOre, "Chromium Ore");
 		LanguageRegistry.addName(magnesiumOre, "Magnesium Ore");
+		LanguageRegistry.addName(nickelOre, "Nickel Ore");
+		
 		LanguageRegistry.addName(blazeClump, "Blaze Clump");
+		LanguageRegistry.addName(blazeIngot, "Blaze Ingot");
+		LanguageRegistry.addName(silicon, "Silicon");
 
 	}
        

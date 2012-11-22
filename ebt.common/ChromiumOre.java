@@ -13,6 +13,7 @@ public class ChromiumOre extends Block {
 		this.setHardness(3.0F);
 	}
 	
+	//This is the texture file//
 	public String getTextureFile(){
 		return "/Tile.png";
 	}

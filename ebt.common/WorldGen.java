@@ -17,17 +17,23 @@ public class WorldGen implements IWorldGenerator {
 		}
 
 	}
-
+	
+	
+	//Overworld generation//
 	private void generateSurface(World world, Random random, int blockX, int blockZ) {
 		for(int i = 0; i < 26; i++){
+		//this is the X, Y, and Z coordinates are for generation//
 		int Xcoord = blockX + random.nextInt(16);
 		int Zcoord = blockZ + random.nextInt(16);
-		int Ycoord = 20 + random.nextInt(16);
+		int Ycoord = random.nextInt(16);
 		
 		(new WorldGenMinable(EverythingButThe.chromiumOre.blockID, 5)).generate(world, random, Xcoord, Ycoord, Zcoord);
 		(new WorldGenMinable(EverythingButThe.magnesiumOre.blockID, 4)).generate(world, random, Xcoord, Ycoord, Zcoord);
+		(new WorldGenMinable(EverythingButThe.nickelOre.blockID, 4)).generate(world, random, Xcoord, Ycoord, Zcoord);
 	}}
 
+	
+	//Nether generation//
 	private void generateNether(World world, Random random, int i, int j) {
 		
 	}
