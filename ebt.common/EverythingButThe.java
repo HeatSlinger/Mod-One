@@ -80,15 +80,15 @@ public class EverythingButThe {
 	public void load(FMLInitializationEvent event) {
         		
 		//Defining Blocks//
-		chromiumOre = new ChromiumOre(chromiumOreBlockID).setBlockName("chromiumOreOre");
-		magnesiumOre = new MagnesiumOre(magnesiumOreBlockID).setBlockName("magnesiumOre");
-		nickelOre = new NickelOre(nickelOreBlockID).setBlockName("nickelOre");
+		chromiumOre = new BlockChromiumOre(chromiumOreBlockID).setBlockName("chromiumOreOre");
+		magnesiumOre = new BlockMagnesiumOre(magnesiumOreBlockID).setBlockName("magnesiumOre");
+		nickelOre = new BlockNickelOre(nickelOreBlockID).setBlockName("nickelOre");
 		
 		
 		//Defining Items//
-		blazeClump = new BlazeClump(blazeClumpID).setItemName("blazeClump");
-		blazeIngot = new BlazeIngot(blazeIngotID).setItemName("blazeIngot");
-		silicon = new Silicon(siliconID).setItemName("silicon");
+		blazeClump = new ItemBlazeClump(blazeClumpID).setItemName("blazeClump");
+		blazeIngot = new ItemBlazeIngot(blazeIngotID).setItemName("blazeIngot");
+		silicon = new ItemSilicon(siliconID).setItemName("silicon");
 		
 		
 		//Registering Blocks//
