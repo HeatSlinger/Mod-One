@@ -30,3 +30,4 @@ Blaze ingots
 --Machines/Blocks--
 Macerator to turn stone into pebbles for slingshot
 Mining machine
+Transformation machine (3x3 that when powered makes "tampered _____")
