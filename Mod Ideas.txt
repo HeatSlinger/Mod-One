@@ -17,6 +17,10 @@ Battleaxe
 Halberd
 Scythe
 Blaze armor to survive lava
+Optimus' sword
+Thor's hammer
+Megatron's battle axe
+Loki's staff
 
 --Items--
 Blaze ingots
