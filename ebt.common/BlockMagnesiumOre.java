@@ -7,8 +7,8 @@ import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Material;
 
 public class BlockMagnesiumOre extends Block {
-	public BlockMagnesiumOre(int blockID) {
-		super(blockID, Material.rock);
+	public BlockMagnesiumOre(int blockID, int par2) {
+		super(blockID, par2, Material.rock);
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setHardness(3.0F);
 	}

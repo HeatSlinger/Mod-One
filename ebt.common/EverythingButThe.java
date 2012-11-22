@@ -80,9 +80,9 @@ public class EverythingButThe {
 	public void load(FMLInitializationEvent event) {
         		
 		//Defining Blocks//
-		chromiumOre = new BlockChromiumOre(chromiumOreBlockID).setBlockName("chromiumOreOre");
-		magnesiumOre = new BlockMagnesiumOre(magnesiumOreBlockID).setBlockName("magnesiumOre");
-		nickelOre = new BlockNickelOre(nickelOreBlockID).setBlockName("nickelOre");
+		chromiumOre = new BlockChromiumOre(chromiumOreBlockID, 0).setBlockName("chromiumOreOre");
+		magnesiumOre = new BlockMagnesiumOre(magnesiumOreBlockID, 1).setBlockName("magnesiumOre");
+		nickelOre = new BlockNickelOre(nickelOreBlockID, 2).setBlockName("nickelOre");
 		
 		
 		//Defining Items//
@@ -99,8 +99,8 @@ public class EverythingButThe {
 		
 		
 		//Adding Recipes//
-		GameRegistry.addRecipe(new ItemStack(this.blazeClump, 1), new Object[]{
-			" X ", " X ", " X ", Character.valueOf('X'), Item.blazeRod
+		GameRegistry.addShapelessRecipe(new ItemStack(this.blazeClump, 1), new Object[]{
+			Item.blazeRod
 		});
 		
 		
@@ -108,7 +108,7 @@ public class EverythingButThe {
 		proxy.registerRenderThings();
 		
 		
-		//Registering Names//
+		//Registering Names - These Are The ACTUAL Names//
 		LanguageRegistry.addName(chromiumOre, "Chromium Ore");
 		LanguageRegistry.addName(magnesiumOre, "Magnesium Ore");
 		LanguageRegistry.addName(nickelOre, "Nickel Ore");
