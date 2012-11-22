@@ -1,5 +1,25 @@
-Let's think this one through now...
+--Ores--
+Phosphorus
+Magnesium
+Chromium
+Nickel
+Flourine
+Mercury
+Silicon
+Carbon Monoxide
+Asphalt
 
-nahbro
+--Tools/Armor--
+Bat
+Slingshot
+Crossbow
+Battleaxe
+Halberd
+Scythe
+Blaze armor to survive lava
 
-This is very weird, however, you shall not do this..
+--Items--
+Blaze ingots
+
+--Machines/Blocks--
+Macerator to turn stone into pebbles for slingshot
