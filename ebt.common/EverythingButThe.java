@@ -29,27 +29,30 @@ public class EverythingButThe {
 	public static EverythingButThe instance = new EverythingButThe();
 		
 	//Declaring Blocks//
-	public static Block chromiumOreOre;
+	public static Block chromiumOre;
+	public static Block magnesiumOre;
 	
 	//Declaring Items//
 	public static Item blazeClump;
 	
 	//Declaring Id's//
-	public int chromiumOreOreBlockID;
-	public int blazeClumpID;
+	public int chromiumOreBlockID = 250;
+	public int magnesiumOreBlockID = 251;
+	public int blazeClumpID = 1200;
 	
 	//The Client and Common Proxy//
-	@SidedProxy(clientSide = "ebt.common.ClientProxy", serverSide = "ebt.common.CommonProxy")
+	@SidedProxy(clientSide = "ebt.client.ClientProxy", serverSide = "ebt.common.CommonProxy")
 	public static CommonProxy proxy;
 	
 	
 	@PreInit
-	public void PreLoad(FMLPreInitializationEvent event){
+	public void PreLoad(FMLPreInitializationEvent event) {
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		
 		config.load();
 		
-		int chromiumOreOreBlockID = config.getBlock("chromiumOreOre Block ID", Configuration.CATEGORY_BLOCK, 120).getInt();
+		int chromiumOreOreBlockID = config.getBlock("Chromium Ore Block ID", Configuration.CATEGORY_BLOCK, 120).getInt();
+		int magnesiumOreBlockID = config.getBlock("Magnesium Ore Block ID", Configuration.CATEGORY_BLOCK, 121).getInt();
 		
 		config.save();
 	}
@@ -58,10 +61,11 @@ public class EverythingButThe {
 	
 	//The Mod//
 	@Init
-	public void load(FMLInitializationEvent event){
+	public void load(FMLInitializationEvent event) {
         		
 		//Defining Blocks//
-		chromiumOreOre = new ChromiumOre(chromiumOreOreBlockID).setBlockName("chromiumOreOreBlock");
+		chromiumOre = new ChromiumOre(chromiumOreBlockID).setBlockName("chromiumOreOre");
+		magnesiumOre = new MagnesiumOre(magnesiumOreBlockID).setBlockName("magnesiumOre");
 		
 		
 		//Defining Items//
@@ -69,11 +73,13 @@ public class EverythingButThe {
 		
 		
 		//Registering Blocks//
-		GameRegistry.registerBlock(chromiumOreOre);
+		GameRegistry.registerBlock(chromiumOre);
+		GameRegistry.registerBlock(magnesiumOre);
+		GameRegistry.registerWorldGenerator(new WorldGen());
 		
 		
-		//Registering Items//
-		GameRegistry.registerItem(blazeClump);
+		
+		//Ore Registration//
 		
 		
 		//Adding Recipes//
@@ -87,7 +93,8 @@ public class EverythingButThe {
 		
 		
 		//Registering Names//
-		LanguageRegistry.addName(chromiumOreOre, "Chromium Ore");
+		LanguageRegistry.addName(chromiumOre, "Chromium Ore");
+		LanguageRegistry.addName(magnesiumOre, "Magnesium Ore");
 		LanguageRegistry.addName(blazeClump, "Blaze Clump");
 
 	}
