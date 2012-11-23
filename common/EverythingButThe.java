@@ -1,9 +1,11 @@
 package ebt.common;
  
 import net.minecraft.src.Block;
+import net.minecraft.src.EnumArmorMaterial;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
 import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.EnumHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -40,7 +42,7 @@ public class EverythingButThe {
 	public static Item silicon;
 	
 	
-	//Declaring Tools or Armor//
+	//Declaring Armor//
 	public static Item blazeHelmet;
 	public static Item blazePlate;
 	public static Item blazeLegs;
@@ -50,24 +52,24 @@ public class EverythingButThe {
 	//Declaring Id's//
 	public int oreChromiumBlockID = 250;
 	public int oreMagnesiumBlockID = 251;
-	public int nickelOreBlockID = 252;
 	
 	public int blazeClumpID = 1200;
 	public int blazeIngotID = 1201;
 	public int siliconID = 1202;
+	
 	public int blazeHelmetID = 1203;
 	public int blazePlateID = 1204;
 	public int blazeLegsID = 1205;
 	public int blazeBootsID = 1206;
 	
 	
+	//Materials//
+	static EnumArmorMaterial EnumArmorMaterialBlaze = EnumHelper.addArmorMaterial("BlazeArmor", 21, new int[]{2, 6, 4, 3,}, 17);
+	
+	
 	//The Client and Common Proxy//
 	@SidedProxy(clientSide = "ebt.client.ClientProxy", serverSide = "ebt.common.CommonProxy")
 	public static CommonProxy proxy;
-	
-	
-	//Material//
-	static EnumArmorMaterial EnumArmorMaterialBlaze = EnumHelper.addArmorMaterial("BlazeArmor", 20, new int[]{2, 6, 4, 3}, 17)
 	
 	
 	@PreInit
@@ -82,6 +84,11 @@ public class EverythingButThe {
 		int blazeClumpID = config.getItem("Blaze Clump ID", Configuration.CATEGORY_ITEM, 1200).getInt();
 		int blazeIngotID = config.getItem("Blaze Ingot ID", Configuration.CATEGORY_ITEM, 1201).getInt();
 		int siliconID = config.getItem("Silicon ID", Configuration.CATEGORY_ITEM, 1202).getInt();
+		
+		int blazeHelmetID = config.getItem("Blaze Helmet ID", Configuration.CATEGORY_ITEM, 1202).getInt();
+		int blazePlateID = config.getItem("Blaze Platebody ID", Configuration.CATEGORY_ITEM, 1203).getInt();
+		int blazeLegsID = config.getItem("Blaze Helmet ID", Configuration.CATEGORY_ITEM, 1204).getInt();
+		int blazeBootsID = config.getItem("Blaze Helmet ID", Configuration.CATEGORY_ITEM, 1205).getInt();
 		
 		config.save();
 	}
@@ -103,8 +110,8 @@ public class EverythingButThe {
 		silicon = new ItemSilicon(siliconID).setItemName("silicon");
 		
 		
-		//Defining Tools or Armor//
-		blazeHelmet = new ItemblazeHelmet(1203,EnumArmorMaterialBlaze,)
+		//Defining Armor//
+		blazeHelmet = new ItemHelmetBlaze(blazeHelmetID, EnumArmorMaterialBlaze);
 		
 		
 		//Registering Blocks//
@@ -116,7 +123,7 @@ public class EverythingButThe {
 		
 		//Adding Recipes//
 		GameRegistry.addShapelessRecipe(new ItemStack(this.blazeClump, 1), new Object[]{
-			Item.blazeRod
+			new ItemStack(Item.blazeRod, 4)
 		});
 		
 		
