@@ -111,8 +111,10 @@ public class EverythingButThe {
 		
 		
 		//Defining Armor//
-		blazeHelmet = new ItemHelmetBlaze(blazeHelmetID, EnumArmorMaterialBlaze);
-		
+		blazeHelmet = new ItemHelmetBlaze(blazeHelmetID, EnumArmorMaterialBlaze, 0, 0) .setItemName("blazeHelmet");
+		blazePlate = new ItemPlateBlaze(blazePlateID, EnumArmorMaterialBlaze, 0, 1) .setItemName("blazePlate");
+		blazeLegs = new ItemLegsBlaze(blazePlateID, EnumArmorMaterialBlaze, 0, 2) .setItemName("blazeLegs");
+		blazeBoots = new ItemBootsBlaze(blazePlateID, EnumArmorMaterialBlaze, 0, 3) .setItemName("blazeBoots");
 		
 		//Registering Blocks//
 		GameRegistry.registerBlock(oreChromium);
@@ -138,6 +140,11 @@ public class EverythingButThe {
 		LanguageRegistry.addName(blazeClump, "Blaze Clump");
 		LanguageRegistry.addName(blazeIngot, "Blaze Ingot");
 		LanguageRegistry.addName(silicon, "Silicon");
+		
+		LanguageRegistry.addName(blazeHelmet, "Blaze Hemlet");
+		LanguageRegistry.addName(blazePlate, "Blaze Platebody");
+		LanguageRegistry.addName(blazeLegs, "Blaze Legs");
+		LanguageRegistry.addName(blazeBoots, "Blaze Boots");
 
 	}
        
