@@ -1,33 +1,34 @@
---Ores--
-Phosphorus
-Magnesium
-Chromium
-Nickel
-Flourine
-Mercury
-Silicon
-Carbon Monoxide
-Asphalt
+--Ores/Water--
+Phosphorus 										NO
+Magnesium 										YES
+Chromium 										YES
+Nickel											NO
+Flourine										N/A
+Mercury											YES
+Silicon											Yes
+Carbon Monoxide										NO
+Asphalt											NO
 
 --Tools/Armor--
-Bat
-Slingshot
-Crossbow
-Battleaxe
-Halberd
-Scythe
-Blaze armor to survive lava
-Optimus' sword
-Thor's hammer
-Megatron's battle axe
-Loki's staff
-Helmet to breathe underwater
-Power armour
+Bat											NO
+Slingshot										YES
+Crossbow										YES
+Battleaxe										NO
+Halberd											NO
+Scythe											NO
+Blaze armor to survive lava								YES
+Optimus' sword										N/A
+Thor's hammer										YES
+Megatron's battle axe									N/A
+Loki's staff										YES
+Helmet to breathe underwater								N/A
+Power armour										YES
 
 --Items--
-Blaze ingots
+Blaze ingots										YES
+Obsidian hammer item to crush stone into pebbles in crafting square			YES
 
 --Machines/Blocks--
-Macerator to turn stone into pebbles for slingshot
-Mining machine
-Transformation machine (3x3 that when powered makes "tampered _____")
+Macerator to turn stone into pebbles for slingshot					NO
+Mining machine										N/A
+Transformation machine (3x3 that when powered makes "tampered _____")			NO
