@@ -27,9 +27,8 @@ public class WorldGen implements IWorldGenerator {
 		int Zcoord = blockZ + random.nextInt(16);
 		int Ycoord = random.nextInt(16);
 		
-		(new WorldGenMinable(EverythingButThe.chromiumOre.blockID, 5)).generate(world, random, Xcoord, Ycoord, Zcoord);
-		(new WorldGenMinable(EverythingButThe.magnesiumOre.blockID, 4)).generate(world, random, Xcoord, Ycoord, Zcoord);
-		(new WorldGenMinable(EverythingButThe.nickelOre.blockID, 4)).generate(world, random, Xcoord, Ycoord, Zcoord);
+		(new WorldGenMinable(EverythingButThe.oreChromium.blockID, 5)).generate(world, random, Xcoord, Ycoord, Zcoord);
+		(new WorldGenMinable(EverythingButThe.oreMagnesium.blockID, 4)).generate(world, random, Xcoord, Ycoord, Zcoord);
 	}}
 
 	

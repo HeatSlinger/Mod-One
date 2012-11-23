@@ -6,8 +6,8 @@ import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Material;
 
-public class BlockMagnesiumOre extends Block {
-	public BlockMagnesiumOre(int blockID, int par2) {
+public class BlockOreChromium extends Block {
+	public BlockOreChromium(int blockID, int par2) {
 		super(blockID, par2, Material.rock);
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setHardness(3.0F);
@@ -17,5 +17,5 @@ public class BlockMagnesiumOre extends Block {
 	public String getTextureFile(){
 		return "/Tile.png";
 	}
-		
+	
 }

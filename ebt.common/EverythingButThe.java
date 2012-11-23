@@ -30,9 +30,8 @@ public class EverythingButThe {
 	
 		
 	//Declaring Blocks//
-	public static Block chromiumOre;
-	public static Block magnesiumOre;
-	public static Block nickelOre;
+	public static Block oreChromium;
+	public static Block oreMagnesium;
 	
 	
 	//Declaring Items//
@@ -42,8 +41,8 @@ public class EverythingButThe {
 	
 	
 	//Declaring Id's//
-	public int chromiumOreBlockID = 250;
-	public int magnesiumOreBlockID = 251;
+	public int oreChromiumBlockID = 250;
+	public int oreMagnesiumBlockID = 251;
 	public int nickelOreBlockID = 252;
 	
 	public int blazeClumpID = 1200;
@@ -62,9 +61,8 @@ public class EverythingButThe {
 		
 		config.load();
 		
-		int chromiumOreOreBlockID = config.getBlock("Chromium Ore Block ID", Configuration.CATEGORY_BLOCK, 120).getInt();
-		int magnesiumOreBlockID = config.getBlock("Magnesium Ore Block ID", Configuration.CATEGORY_BLOCK, 121).getInt();
-		int nickelOreBlockID = config.getBlock("Nickel Ore Block ID", Configuration.CATEGORY_BLOCK, 122).getInt();
+		int oreoreChromiumBlockID = config.getBlock("Chromium Ore Block ID", Configuration.CATEGORY_BLOCK, 120).getInt();
+		int oreMagnesiumBlockID = config.getBlock("Magnesium Ore Block ID", Configuration.CATEGORY_BLOCK, 121).getInt();
 		
 		int blazeClumpID = config.getItem("Blaze Clump ID", Configuration.CATEGORY_ITEM, 1200).getInt();
 		int blazeIngotID = config.getItem("Blaze Ingot ID", Configuration.CATEGORY_ITEM, 1201).getInt();
@@ -80,9 +78,8 @@ public class EverythingButThe {
 	public void load(FMLInitializationEvent event) {
         		
 		//Defining Blocks//
-		chromiumOre = new BlockChromiumOre(chromiumOreBlockID, 0).setBlockName("chromiumOreOre");
-		magnesiumOre = new BlockMagnesiumOre(magnesiumOreBlockID, 1).setBlockName("magnesiumOre");
-		nickelOre = new BlockNickelOre(nickelOreBlockID, 2).setBlockName("nickelOre");
+		oreChromium = new BlockOreChromium(oreChromiumBlockID, 0).setBlockName("oreoreChromium");
+		oreMagnesium = new BlockOreMagnesium(oreMagnesiumBlockID, 1).setBlockName("oreMagnesium");
 		
 		
 		//Defining Items//
@@ -92,9 +89,9 @@ public class EverythingButThe {
 		
 		
 		//Registering Blocks//
-		GameRegistry.registerBlock(chromiumOre);
-		GameRegistry.registerBlock(magnesiumOre);
-		GameRegistry.registerBlock(nickelOre);
+		GameRegistry.registerBlock(oreChromium);
+		GameRegistry.registerBlock(oreMagnesium);
+		
 		GameRegistry.registerWorldGenerator(new WorldGen());
 		
 		
@@ -109,9 +106,8 @@ public class EverythingButThe {
 		
 		
 		//Registering Names - These Are The ACTUAL Names//
-		LanguageRegistry.addName(chromiumOre, "Chromium Ore");
-		LanguageRegistry.addName(magnesiumOre, "Magnesium Ore");
-		LanguageRegistry.addName(nickelOre, "Nickel Ore");
+		LanguageRegistry.addName(oreChromium, "Chromium Ore");
+		LanguageRegistry.addName(oreMagnesium, "Magnesium Ore");
 		
 		LanguageRegistry.addName(blazeClump, "Blaze Clump");
 		LanguageRegistry.addName(blazeIngot, "Blaze Ingot");
