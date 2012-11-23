@@ -40,6 +40,13 @@ public class EverythingButThe {
 	public static Item silicon;
 	
 	
+	//Declaring Tools or Armor//
+	public static Item blazeHelmet;
+	public static Item blazePlate;
+	public static Item blazeLegs;
+	public static Item blazeBoots;
+	
+	
 	//Declaring Id's//
 	public int oreChromiumBlockID = 250;
 	public int oreMagnesiumBlockID = 251;
@@ -48,11 +55,19 @@ public class EverythingButThe {
 	public int blazeClumpID = 1200;
 	public int blazeIngotID = 1201;
 	public int siliconID = 1202;
+	public int blazeHelmetID = 1203;
+	public int blazePlateID = 1204;
+	public int blazeLegsID = 1205;
+	public int blazeBootsID = 1206;
 	
 	
 	//The Client and Common Proxy//
 	@SidedProxy(clientSide = "ebt.client.ClientProxy", serverSide = "ebt.common.CommonProxy")
 	public static CommonProxy proxy;
+	
+	
+	//Material//
+	static EnumArmorMaterial EnumArmorMaterialBlaze = EnumHelper.addArmorMaterial("BlazeArmor", 20, new int[]{2, 6, 4, 3}, 17)
 	
 	
 	@PreInit
@@ -86,6 +101,10 @@ public class EverythingButThe {
 		blazeClump = new ItemBlazeClump(blazeClumpID).setItemName("blazeClump");
 		blazeIngot = new ItemBlazeIngot(blazeIngotID).setItemName("blazeIngot");
 		silicon = new ItemSilicon(siliconID).setItemName("silicon");
+		
+		
+		//Defining Tools or Armor//
+		blazeHelmet = new ItemblazeHelmet(1203,EnumArmorMaterialBlaze,)
 		
 		
 		//Registering Blocks//
