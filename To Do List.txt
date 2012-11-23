@@ -6,7 +6,7 @@ Mercury -
 --Tools/Armor--
 Slingshot - 
 Crossbow -
-Blaze armor - 
+Blaze armor - Both - In Progress
 Thor's Hammer - 
 Loki's Staff - 
 Power Armor - 
