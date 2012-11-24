@@ -44,6 +44,7 @@ public class EverythingButThe {
 	public static Item silicon;
 	
 	public static Item blazeSword;
+	public static Item slingshot;
 	
 	
 	//Declaring Armor//
@@ -64,6 +65,7 @@ public class EverythingButThe {
 	public int siliconID = 1204;
 	
 	public int blazeSwordID = 1205;
+	public int slingshotID = 1210;
 	
 	public int blazeHelmetID = 1206;
 	public int blazePlateID = 1207;
@@ -96,6 +98,7 @@ public class EverythingButThe {
 		int siliconID = config.getItem("Silicon ID", Configuration.CATEGORY_ITEM, 1204).getInt();
 		
 		int blazeSwordID = config.getItem("Blaze Sword ID",  Configuration.CATEGORY_ITEM, 1205).getInt();
+		int slingshotID = config.getItem("Slingshot ID", Configuration.CATEGORY_ITEM, 1210).getInt();
 		
 		int blazeHelmetID = config.getItem("Blaze Helmet ID", Configuration.CATEGORY_ITEM, 1206).getInt();
 		int blazePlateID = config.getItem("Blaze Platebody ID", Configuration.CATEGORY_ITEM, 1207).getInt();
@@ -122,7 +125,8 @@ public class EverythingButThe {
 		blazeIngot = new ItemBlazeIngot(blazeIngotID) .setIconIndex(1) .setItemName("blazeIngot");
 		silicon = new ItemSilicon(siliconID) .setIconIndex(3) .setItemName("silicon");
 		
-		blazeSword = new ItemBlazeSword(4001, BlazeTool).setIconIndex(16).setItemName("blazeSword"); 
+		blazeSword = new ItemBlazeSword(blazeSwordID, BlazeTool).setIconIndex(16) .setItemName("blazeSword"); 
+		slingshot = new ItemSlingshot(slingshotID) .setIconIndex(17) .setItemName("slingshot");
 		
 		
 		//Defining Armor//
@@ -180,6 +184,7 @@ public class EverythingButThe {
 		LanguageRegistry.addName(silicon, "Silicon");
 		
 		LanguageRegistry.addName(blazeSword, "Blaze Sword"); 
+		LanguageRegistry.addName(slingshot, "Slingshot");
 		
 		LanguageRegistry.addName(blazeHelmet, "Blaze Hemlet");
 		LanguageRegistry.addName(blazePlate, "Blaze Chestplate");
