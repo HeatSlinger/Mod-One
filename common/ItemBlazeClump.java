@@ -4,8 +4,8 @@ import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Item;
 
 public class ItemBlazeClump extends Item {
-	public ItemBlazeClump(int blockID) {
-		super(blockID);
+	public ItemBlazeClump(int itemID) {
+		super(itemID);
 		maxStackSize = 64;
 		this.setCreativeTab(CreativeTabs.tabMaterials);
 	}

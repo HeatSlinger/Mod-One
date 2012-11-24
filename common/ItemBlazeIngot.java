@@ -4,8 +4,8 @@ import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Item;
 
 public class ItemBlazeIngot extends Item {
-	public ItemBlazeIngot(int blockID) {
-		super(blockID);
+	public ItemBlazeIngot(int itemID) {
+		super(itemID);
 		maxStackSize = 64;
 		this.setCreativeTab(CreativeTabs.tabMaterials);
 	}

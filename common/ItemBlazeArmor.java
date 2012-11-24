@@ -8,8 +8,8 @@ import net.minecraft.src.ItemStack;
 import net.minecraftforge.common.IArmorTextureProvider;
 
 public class ItemBlazeArmor extends ItemArmor implements IArmorTextureProvider {
-	public ItemBlazeArmor(int blockID, EnumArmorMaterial enumArmorMaterialBlaze, int j, int k) {
-		super(blockID, enumArmorMaterialBlaze, j, k);
+	public ItemBlazeArmor(int blockID, EnumArmorMaterial enumarmormaterial, int j, int k) {
+		super(blockID, enumarmormaterial, j, k);
 		this.setCreativeTab(CreativeTabs.tabCombat);
 		
 	}

@@ -2,6 +2,7 @@ package ebt.common;
  
 import net.minecraft.src.Block;
 import net.minecraft.src.EnumArmorMaterial;
+import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
 import net.minecraftforge.common.Configuration;
@@ -40,6 +41,8 @@ public class EverythingButThe {
 	public static Item blazeIngot;
 	public static Item silicon;
 	
+	public static Item blazeSword;
+	
 	
 	//Declaring Armor//
 	public static Item blazeHelmet;
@@ -56,6 +59,8 @@ public class EverythingButThe {
 	public int blazeIngotID = 1201;
 	public int siliconID = 1202;
 	
+	public int blazeSwordID = 1207;
+	
 	public int blazeHelmetID = 1203;
 	public int blazePlateID = 1204;
 	public int blazeLegsID = 1205;
@@ -63,9 +68,8 @@ public class EverythingButThe {
 	
 	
 	//Materials//
-	static EnumArmorMaterial EnumArmorMaterialBlaze = EnumHelper.addArmorMaterial("BLAZE", 21, new int[]{2, 6, 4, 3,}, 17);
-	
-	
+	static EnumArmorMaterial BlazeArmor = EnumHelper.addArmorMaterial("BLAZE", 21, new int[]{2, 6, 4, 3,}, 17);
+	static EnumToolMaterial BlazeTool = EnumHelper.addToolMaterial("Blaze", 0, 400, 7F, 4, 14);
 	
 	
 	//The Client and Common Proxy//
@@ -73,9 +77,7 @@ public class EverythingButThe {
 	public static CommonProxy proxy;
 	
 	@PreInit
-	public void PreLoad(FMLPreInitializationEvent event) {
-		proxy.texturePreloads();
-		
+	public void PreLoad(FMLPreInitializationEvent event) {		
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		
 		config.load();
@@ -86,6 +88,8 @@ public class EverythingButThe {
 		int blazeClumpID = config.getItem("Blaze Clump ID", Configuration.CATEGORY_ITEM, 1200).getInt();
 		int blazeIngotID = config.getItem("Blaze Ingot ID", Configuration.CATEGORY_ITEM, 1201).getInt();
 		int siliconID = config.getItem("Silicon ID", Configuration.CATEGORY_ITEM, 1202).getInt();
+		
+		int blazeSwordID = config.getItem("Blaze Sword ID",  Configuration.CATEGORY_ITEM, 1207).getInt();
 		
 		int blazeHelmetID = config.getItem("Blaze Helmet ID", Configuration.CATEGORY_ITEM, 1202).getInt();
 		int blazePlateID = config.getItem("Blaze Platebody ID", Configuration.CATEGORY_ITEM, 1203).getInt();
@@ -100,25 +104,25 @@ public class EverythingButThe {
 	//The Mod//
 	@Init
 	public void load(FMLInitializationEvent event) {
-		//Rendering BlazeEnum//
-		int rendererBlaze = proxy.addArmor("blaze");
-        		
 		//Defining Blocks//
 		oreChromium = new BlockOreChromium(oreChromiumBlockID, 0).setBlockName("oreoreChromium");
 		oreMagnesium = new BlockOreMagnesium(oreMagnesiumBlockID, 1).setBlockName("oreMagnesium");
 		
 		
 		//Defining Items//
-		blazeClump = new ItemBlazeClump(blazeClumpID).setItemName("blazeClump");
-		blazeIngot = new ItemBlazeIngot(blazeIngotID).setItemName("blazeIngot");
-		silicon = new ItemSilicon(siliconID).setItemName("silicon");
+		blazeClump = new ItemBlazeClump(blazeClumpID) .setIconIndex(0) .setItemName("blazeClump");
+		blazeIngot = new ItemBlazeIngot(blazeIngotID) .setIconIndex(1) .setItemName("blazeIngot");
+		silicon = new ItemSilicon(siliconID) .setIconIndex(3) .setItemName("silicon");
+		
+		blazeSword = new ItemBlazeSword(4001, BlazeTool).setIconIndex(0).setItemName("blazeSword"); 
 		
 		
 		//Defining Armor//
-		blazeHelmet = new ItemBlazeArmor(blazeHelmetID, EnumArmorMaterialBlaze, rendererBlaze, 0) .setIconIndex(32) .setItemName("blazeHelmet");
-		blazePlate = new ItemBlazeArmor(blazePlateID, EnumArmorMaterialBlaze, rendererBlaze, 1) .setIconIndex(32) .setItemName("blazePlate");
-		blazeLegs = new ItemBlazeArmor(blazeLegsID, EnumArmorMaterialBlaze, rendererBlaze, 2) .setIconIndex(32) .setItemName("blazeLegs");
-		blazeBoots = new ItemBlazeArmor(blazeBootsID, EnumArmorMaterialBlaze, rendererBlaze, 3) .setIconIndex(32) .setItemName("blazeBoots");
+		int rendererBlaze = proxy.addArmor("blaze");
+		blazeHelmet = new ItemBlazeArmor(blazeHelmetID, BlazeArmor, rendererBlaze, 0) .setIconIndex(0) .setItemName("blazeHelmet");
+		blazePlate = new ItemBlazeArmor(blazePlateID, BlazeArmor, rendererBlaze, 1) .setIconIndex(0) .setItemName("blazePlate");
+		blazeLegs = new ItemBlazeArmor(blazeLegsID, BlazeArmor, rendererBlaze, 2) .setIconIndex(0) .setItemName("blazeLegs");
+		blazeBoots = new ItemBlazeArmor(blazeBootsID, BlazeArmor, rendererBlaze, 3) .setIconIndex(0) .setItemName("blazeBoots");
 		
 		//Registering Blocks//
 		GameRegistry.registerBlock(oreChromium);
@@ -144,6 +148,9 @@ public class EverythingButThe {
 		GameRegistry.addRecipe(new ItemStack(this.blazeBoots), new Object[]{
 			"   ", "X X", "X X", 'X', blazeIngot
 		});
+		GameRegistry.addRecipe(new ItemStack(this.blazeSword), new Object[]{
+			" X ", " X ", " Y ", 'X', blazeIngot, 'Y', Item.blazeRod
+		});
 		
 		GameRegistry.addSmelting(blazeClump.shiftedIndex, new ItemStack(this.blazeIngot), .1F);
 		
@@ -159,6 +166,8 @@ public class EverythingButThe {
 		LanguageRegistry.addName(blazeClump, "Blaze Clump");
 		LanguageRegistry.addName(blazeIngot, "Blaze Ingot");
 		LanguageRegistry.addName(silicon, "Silicon");
+		
+		LanguageRegistry.addName(blazeSword, "Blaze Sword"); 
 		
 		LanguageRegistry.addName(blazeHelmet, "Blaze Hemlet");
 		LanguageRegistry.addName(blazePlate, "Blaze Chestplate");
