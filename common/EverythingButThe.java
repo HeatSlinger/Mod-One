@@ -21,7 +21,6 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
 @Mod(modid = "mod", name = "Everything But The", version = "1.0")
- 
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
  
 public class EverythingButThe {
@@ -64,16 +63,19 @@ public class EverythingButThe {
 	
 	
 	//Materials//
-	static EnumArmorMaterial EnumArmorMaterialBlaze = EnumHelper.addArmorMaterial("BlazeArmor", 21, new int[]{2, 6, 4, 3,}, 17);
+	static EnumArmorMaterial EnumArmorMaterialBlaze = EnumHelper.addArmorMaterial("BLAZE", 21, new int[]{2, 6, 4, 3,}, 17);
+	
+	
 	
 	
 	//The Client and Common Proxy//
 	@SidedProxy(clientSide = "ebt.client.ClientProxy", serverSide = "ebt.common.CommonProxy")
 	public static CommonProxy proxy;
 	
-	
 	@PreInit
 	public void PreLoad(FMLPreInitializationEvent event) {
+		proxy.texturePreloads();
+		
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		
 		config.load();
@@ -98,6 +100,8 @@ public class EverythingButThe {
 	//The Mod//
 	@Init
 	public void load(FMLInitializationEvent event) {
+		//Rendering BlazeEnum//
+		int rendererBlaze = proxy.addArmor("blaze");
         		
 		//Defining Blocks//
 		oreChromium = new BlockOreChromium(oreChromiumBlockID, 0).setBlockName("oreoreChromium");
@@ -111,10 +115,10 @@ public class EverythingButThe {
 		
 		
 		//Defining Armor//
-		blazeHelmet = new ItemHelmetBlaze(blazeHelmetID, EnumArmorMaterialBlaze, 0, 0) .setItemName("blazeHelmet");
-		blazePlate = new ItemPlateBlaze(blazePlateID, EnumArmorMaterialBlaze, 0, 1) .setItemName("blazePlate");
-		blazeLegs = new ItemLegsBlaze(blazePlateID, EnumArmorMaterialBlaze, 0, 2) .setItemName("blazeLegs");
-		blazeBoots = new ItemBootsBlaze(blazePlateID, EnumArmorMaterialBlaze, 0, 3) .setItemName("blazeBoots");
+		blazeHelmet = new ItemBlazeArmor(blazeHelmetID, EnumArmorMaterialBlaze, rendererBlaze, 0) .setIconIndex(32) .setItemName("blazeHelmet");
+		blazePlate = new ItemBlazeArmor(blazePlateID, EnumArmorMaterialBlaze, rendererBlaze, 1) .setIconIndex(32) .setItemName("blazePlate");
+		blazeLegs = new ItemBlazeArmor(blazeLegsID, EnumArmorMaterialBlaze, rendererBlaze, 2) .setIconIndex(32) .setItemName("blazeLegs");
+		blazeBoots = new ItemBlazeArmor(blazeBootsID, EnumArmorMaterialBlaze, rendererBlaze, 3) .setIconIndex(32) .setItemName("blazeBoots");
 		
 		//Registering Blocks//
 		GameRegistry.registerBlock(oreChromium);
@@ -127,6 +131,21 @@ public class EverythingButThe {
 		GameRegistry.addShapelessRecipe(new ItemStack(this.blazeClump, 1), new Object[]{
 			new ItemStack(Item.blazeRod, 4)
 		});
+		
+		GameRegistry.addRecipe(new ItemStack(this.blazeHelmet), new Object[]{
+			"XXX", "X X", "   ", 'X', blazeIngot
+		});
+		GameRegistry.addRecipe(new ItemStack(this.blazePlate), new Object[]{
+			"X X", "XXX", "XXX", 'X', blazeIngot
+		});
+		GameRegistry.addRecipe(new ItemStack(this.blazeLegs), new Object[]{
+			"XXX", "X X", "X X", 'X', blazeIngot
+		});
+		GameRegistry.addRecipe(new ItemStack(this.blazeBoots), new Object[]{
+			"   ", "X X", "X X", 'X', blazeIngot
+		});
+		
+		GameRegistry.addSmelting(blazeClump.shiftedIndex, new ItemStack(this.blazeIngot), .1F);
 		
 		
 		//The Proxy//
@@ -142,7 +161,7 @@ public class EverythingButThe {
 		LanguageRegistry.addName(silicon, "Silicon");
 		
 		LanguageRegistry.addName(blazeHelmet, "Blaze Hemlet");
-		LanguageRegistry.addName(blazePlate, "Blaze Platebody");
+		LanguageRegistry.addName(blazePlate, "Blaze Chestplate");
 		LanguageRegistry.addName(blazeLegs, "Blaze Legs");
 		LanguageRegistry.addName(blazeBoots, "Blaze Boots");
 
