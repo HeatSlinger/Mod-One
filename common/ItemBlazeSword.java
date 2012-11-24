@@ -19,6 +19,6 @@ public class ItemBlazeSword extends ItemSword {
 	
 	//This is the texture file//
 	public String getTextureFile() {
-		return "/ebt.client/resources/swords.png";
+		return "/ebt.client/resources/items.png";
 	}
 }
