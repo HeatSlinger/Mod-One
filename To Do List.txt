@@ -17,5 +17,7 @@ Blaze Ingots - Nathan - Done
 Obsidian Hammer - 
 Silicon - Nathan - Done
 Anti-fire Stick (Fire resistance potion + stick) - 
+Phosphorus Torches - 
+Blaze Pebble - 
 
 --Machines--
