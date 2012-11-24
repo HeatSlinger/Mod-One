@@ -10,10 +10,12 @@ Blaze armor - Both - In Progress
 Thor's Hammer - 
 Loki's Staff - 
 Power Armor - 
+Blaze Sword - Nathan - Done
 
 --Items--
 Blaze Ingots - Nathan - Done
 Obsidian Hammer - 
 Silicon - Nathan - Done
+Anti-fire Stick (Fire resistance potion + stick) - 
 
 --Machines--

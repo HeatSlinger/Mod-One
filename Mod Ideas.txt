@@ -23,10 +23,12 @@ Megatron's battle axe									N/A
 Loki's staff										YES
 Helmet to breathe underwater								N/A
 Power armour										YES
+Blaze Sword										YES
 
 --Items--
 Blaze ingots										YES
 Obsidian hammer item to crush stone into pebbles in crafting square			YES
+Anti-fire stick										YES
 
 --Machines/Blocks--
 Macerator to turn stone into pebbles for slingshot					NO
