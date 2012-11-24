@@ -15,7 +15,7 @@ public class BlockOreMagnesium extends Block {
 	
 	//This is the texture file//
 	public String getTextureFile(){
-		return "/Tile.png";
+		return "/ebt.client/resources/terrain.png";
 	}
 		
 }

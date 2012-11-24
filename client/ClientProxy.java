@@ -8,7 +8,7 @@ public class ClientProxy extends CommonProxy {
 	//Where the textures getting registered are located//
 	@Override
 	public void registerRenderThings() {
-		MinecraftForgeClient.preloadTexture("/Tile.png");
+		MinecraftForgeClient.preloadTexture("/ebt.client/resources/terrain.png");
 	}
 
 	@Override

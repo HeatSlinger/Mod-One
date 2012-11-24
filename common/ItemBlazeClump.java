@@ -12,6 +12,6 @@ public class ItemBlazeClump extends Item {
 	
 	//This is the texture file//
 	public String getTextureFile(){
-		return "/Tile.png";
+		return "/ebt.client/resources/items.png";
 	}
 }

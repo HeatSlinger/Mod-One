@@ -27,6 +27,6 @@ public class ItemBlazeArmor extends ItemArmor implements IArmorTextureProvider {
 	
 	//This is the texture file//
 	public String getTextureFile() {
-		return "/items.png";
+		return "/ebt.client/resources/items.png";
 	}
 }
