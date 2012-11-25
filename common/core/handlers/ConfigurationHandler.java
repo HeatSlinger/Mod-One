@@ -27,10 +27,10 @@ public class ConfigurationHandler {
 		             .getBoolean(ConfigurationSettings.AUTO_RESOLVE_BLOCK_IDS_DEFAULT);
 			BlockIds.ORE_CHROMIUM = configuration
 					.getBlock(Strings.ORE_CHROMIUM_NAME, BlockIds.ORE_CHROMIUM_DEFAULT)
-					.getInt(BlockIds.ORE_CHROMIUM);
+					.getInt(BlockIds.ORE_CHROMIUM_DEFAULT);
 			BlockIds.ORE_MAGNESIUM = configuration
 					.getBlock(Strings.ORE_MAGNESIUM_NAME, BlockIds.ORE_MAGNESIUM_DEFAULT)
-					.getInt(BlockIds.ORE_MAGNESIUM);
+					.getInt(BlockIds.ORE_MAGNESIUM_DEFAULT);
 			
 			ItemIds.BLAZE_SWORD = configuration
 		             .getItem(Strings.BLAZE_SWORD_NAME, ItemIds.BLAZE_SWORD_DEFAULT)

@@ -13,16 +13,26 @@ public class ModBlocks {
 	public static Block oreChromium;
 	public static Block oreMagnesium;
 	
+	
+	public static Block mercuryStill;
+	public static Block mercuryFlowing;
+	
 	public static void init() {
 		
-		oreChromium = new BlockOreChromium(BlockIds.ORE_CHROMIUM, 0).setBlockName("oreoreChromium");
-		oreMagnesium = new BlockOreMagnesium(BlockIds.ORE_MAGNESIUM, 1).setBlockName("oreMagnesium");
+		oreChromium = new BlockOreChromium(BlockIds.ORE_CHROMIUM, 0);
+		oreMagnesium = new BlockOreMagnesium(BlockIds.ORE_MAGNESIUM, 1);
+		
+
 		
 		GameRegistry.registerBlock(oreChromium);
 		GameRegistry.registerBlock(oreMagnesium);
 		
+
+		
 		LanguageRegistry.addName(oreChromium, "Chromium Ore");
 		LanguageRegistry.addName(oreMagnesium, "Magnesium Ore");
+		
+
 		
 	}
 }

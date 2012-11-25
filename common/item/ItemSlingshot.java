@@ -22,6 +22,7 @@ public class ItemSlingshot extends Item {
 
 	public ItemSlingshot(int itemID) {
 		super(itemID);
+		this.setIconIndex(12);
 		this.setCreativeTab(CreativeTabs.tabCombat);
 		this.maxStackSize = 1;
 		this.setMaxDamage(500);

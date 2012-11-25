@@ -7,6 +7,7 @@ import net.minecraft.src.Item;
 public class ItemIngotChromium extends Item {
 	public ItemIngotChromium(int itemID) {
 		super(itemID);
+		this.setIconIndex(5);
 		maxStackSize = 64;
 		this.setCreativeTab(CreativeTabs.tabMaterials);
 	}

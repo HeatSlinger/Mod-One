@@ -7,6 +7,7 @@ import net.minecraft.src.Item;
 public class ItemClumpBlaze extends Item {
 	public ItemClumpBlaze(int itemID) {
 		super(itemID);
+		this.setIconIndex(0); 
 		maxStackSize = 64;
 		this.setCreativeTab(CreativeTabs.tabMaterials);
 	}

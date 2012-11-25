@@ -7,6 +7,7 @@ import net.minecraft.src.Item;
 public class ItemSilicon extends Item {
 	public ItemSilicon(int itemID) {
 		super(itemID);
+		this.setIconIndex(3);
 		maxStackSize = 64;
 		this.setCreativeTab(CreativeTabs.tabMaterials);
 	}

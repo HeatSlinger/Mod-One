@@ -19,7 +19,7 @@ public class ItemBlazeArmor extends ItemArmor implements IArmorTextureProvider {
 	@Override
 	public String getArmorTextureFile(ItemStack itemstack) {
 		 if(itemstack.itemID == EverythingButThe.blazeHelmet.shiftedIndex || itemstack.itemID == EverythingButThe.blazePlate.shiftedIndex || itemstack.itemID == EverythingButThe.blazeBoots.shiftedIndex) {
-                         return Reference.ARMOR_SHEET_LOCATION + "/blaze1.png";
+                         return Reference.ARMOR_SHEET_LOCATION + "blaze1.png";
          }
          if(itemstack.itemID == EverythingButThe.blazeLegs.shiftedIndex) {
                          return Reference.ARMOR_SHEET_LOCATION + "blaze2.png";

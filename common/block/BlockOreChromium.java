@@ -3,6 +3,7 @@ package ebt.common.block;
 import java.util.Random;
 
 import ebt.common.lib.Reference;
+import ebt.common.lib.Strings;
 
 import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
@@ -11,6 +12,7 @@ import net.minecraft.src.Material;
 public class BlockOreChromium extends Block {
 	public BlockOreChromium(int blockID, int par2) {
 		super(blockID, par2, Material.rock);
+		this.setBlockName(Strings.ORE_CHROMIUM_NAME);
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setHardness(3.0F);
 	}

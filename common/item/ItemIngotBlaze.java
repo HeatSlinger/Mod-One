@@ -7,6 +7,7 @@ import net.minecraft.src.Item;
 public class ItemIngotBlaze extends Item {
 	public ItemIngotBlaze(int itemID) {
 		super(itemID);
+		this.setIconIndex(1);
 		maxStackSize = 64;
 		this.setCreativeTab(CreativeTabs.tabMaterials);
 	}

@@ -1,16 +1,11 @@
 package ebt.common;
  
-import net.minecraft.src.Block;
 import net.minecraft.src.DamageSource;
 import net.minecraft.src.Entity;
-import net.minecraft.src.EntityArrow;
 import net.minecraft.src.EntityDamageSourceIndirect;
 import net.minecraft.src.EnumArmorMaterial;
-import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
-import net.minecraft.src.RenderArrow;
-import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.EnumHelper;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
@@ -21,25 +16,13 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
-import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import ebt.client.RenderPebble;
 import ebt.common.block.ModBlocks;
-import ebt.common.block.BlockOreChromium;
-import ebt.common.block.BlockOreMagnesium;
 import ebt.common.core.CommonProxy;
 import ebt.common.core.handlers.ConfigurationHandler;
 import ebt.common.item.ItemBlazeArmor;
-import ebt.common.item.ItemBlazeSword;
-import ebt.common.item.ItemIngotChromium;
-import ebt.common.item.ItemIngotMagnesium;
-import ebt.common.item.ItemPebble;
-import ebt.common.item.ItemSilicon;
-import ebt.common.item.ItemSlingshot;
 import ebt.common.item.ModItems;
-import ebt.common.lib.ConfigurationSettings;
 import ebt.common.lib.ItemIds;
 
 
@@ -77,7 +60,7 @@ public class EverythingButThe {
 	
 	
 	//The Client and Common Proxy//
-	@SidedProxy(clientSide = "ebt.client.ClientProxy", serverSide = "ebt.common.CommonProxy")
+	@SidedProxy(clientSide = "ebt.client.core.ClientProxy", serverSide = "ebt.common.CommonProxy")
 	public static CommonProxy proxy;
 	
 	@PreInit
@@ -138,6 +121,6 @@ public class EverythingButThe {
 		
 		
 		//Rendering Registry//
-		RenderingRegistry.registerEntityRenderingHandler(EntityPebble.class, new RenderPebble());
+		RenderingRegistry.registerEntityRenderingHandler(EntityPebble.class, new ebt.client.render.RenderPebble());
 	}
 }

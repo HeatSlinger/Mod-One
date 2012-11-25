@@ -14,6 +14,7 @@ public class ItemBlazeSword extends ItemSword {
 	
 	public ItemBlazeSword(int itemID, EnumToolMaterial enumtoolmaterial) {
 		super(itemID, enumtoolmaterial);
+		this.setIconIndex(16);
 		this.setCreativeTab(CreativeTabs.tabCombat);
 		this.setMaxDamage(1000);
 		damage = 7;

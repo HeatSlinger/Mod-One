@@ -27,14 +27,14 @@ public class ModItems {
 	public static void init() {
 		
 		//Defining Items//
-		ingotChromium = new ItemIngotChromium(ItemIds.INGOT_CHROMIUM) .setIconIndex(4) .setItemName("ingotChromium");
-		ingotMagnesium = new ItemIngotMagnesium(ItemIds.INGOT_MAGNESIUM) .setIconIndex(5) .setItemName("ingotMagnesium");
-		clumpBlaze = new ItemClumpBlaze(ItemIds.BLAZE_CLUMP) .setIconIndex(0) .setItemName("clumpBlaze");
-		ingotBlaze = new ItemIngotBlaze(ItemIds.BLAZE_INGOT) .setIconIndex(1) .setItemName("ingotBlaze");
-		silicon = new ItemSilicon(ItemIds.SILICON) .setIconIndex(3) .setItemName("silicon");
-		pebble = new ItemPebble(ItemIds.PEBBLE) .setIconIndex(2) .setItemName("pebble");
+		ingotChromium = new ItemIngotChromium(ItemIds.INGOT_CHROMIUM) .setItemName("ingotChromium");
+		ingotMagnesium = new ItemIngotMagnesium(ItemIds.INGOT_MAGNESIUM) .setItemName("ingotMagnesium");
+		clumpBlaze = new ItemClumpBlaze(ItemIds.BLAZE_CLUMP) .setItemName("clumpBlaze");
+		ingotBlaze = new ItemIngotBlaze(ItemIds.BLAZE_INGOT) .setItemName("ingotBlaze");
+		silicon = new ItemSilicon(ItemIds.SILICON) .setItemName("silicon");
+		pebble = new ItemPebble(ItemIds.PEBBLE) .setItemName("pebble");
 		
-		blazeSword = new ItemBlazeSword(ItemIds.BLAZE_SWORD_DEFAULT, BlazeTool).setIconIndex(16) .setItemName("blazeSword"); 
+		blazeSword = new ItemBlazeSword(ItemIds.BLAZE_SWORD_DEFAULT, BlazeTool) .setItemName("blazeSword"); 
 		slingshot = new ItemSlingshot(ItemIds.SLINGSHOT_DEFAULT) .setIconIndex(12) .setItemName("slingshot");
 		
 		

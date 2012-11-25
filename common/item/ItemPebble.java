@@ -7,6 +7,7 @@ import net.minecraft.src.Item;
 public class ItemPebble extends Item {
 	public ItemPebble(int itemID) {
 		super(itemID);
+		this.setIconIndex(2);
 		maxStackSize = 64;
 		this.setCreativeTab(CreativeTabs.tabCombat);
 	}
