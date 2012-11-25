@@ -1,5 +1,6 @@
-package ebt.common;
+package ebt.common.item;
 
+import ebt.common.EverythingButThe;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.EnumArmorMaterial;
 import net.minecraft.src.Item;

@@ -1,4 +1,4 @@
-package ebt.common;
+package ebt.common.core;
  
 public class CommonProxy {
 	//Registers the textures//

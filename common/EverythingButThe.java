@@ -26,6 +26,18 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import ebt.client.RenderPebble;
+import ebt.common.block.ModBlocks;
+import ebt.common.block.BlockOreChromium;
+import ebt.common.block.BlockOreMagnesium;
+import ebt.common.core.CommonProxy;
+import ebt.common.item.ItemBlazeArmor;
+import ebt.common.item.ItemBlazeSword;
+import ebt.common.item.ItemIngotChromium;
+import ebt.common.item.ItemIngotMagnesium;
+import ebt.common.item.ItemPebble;
+import ebt.common.item.ItemSilicon;
+import ebt.common.item.ItemSlingshot;
+import ebt.common.item.ModItems;
 
 
 @Mod(modid = "mod", name = "Everything But The", version = "1.0")
@@ -37,24 +49,6 @@ public class EverythingButThe {
 	//Declaring Instance//
 	public static EverythingButThe instance = new EverythingButThe();
 	
-		
-	//Declaring Blocks//
-	public static Block oreChromium;
-	public static Block oreMagnesium;
-	
-	
-	//Declaring Items//
-	public static Item ingotChromium;
-	public static Item ingotMagnesium;	
-	public static Item blazeClump;
-	public static Item blazeIngot;
-	public static Item silicon;
-	public static Item pebble;
-	
-	public static Item blazeSword;
-	public static Item slingshot;
-	
-	
 	//Declaring Armor//
 	public static Item blazeHelmet;
 	public static Item blazePlate;
@@ -62,35 +56,21 @@ public class EverythingButThe {
 	public static Item blazeBoots;
 	
 	
-	//Declaring Id's//
-	public int oreChromiumBlockID = 250;
-	public int oreMagnesiumBlockID = 251;
-	
-	public int ingotChromiumID = 1200;
-	public int ingotMagnesiumID = 1201;
-	public int blazeClumpID = 1202;
-	public int blazeIngotID = 1203;
-	public int siliconID = 1204;
-	public int pebbleID = 1211;
-	
-	public int blazeSwordID = 1205;
-	public int slingshotID = 1210;
-	
+	//Declaring Id's//	
 	public int blazeHelmetID = 1206;
 	public int blazePlateID = 1207;
 	public int blazeLegsID = 1208;
 	public int blazeBootsID = 1209;
-	
-	
-	//Materials//
-	static EnumArmorMaterial BlazeArmor = EnumHelper.addArmorMaterial("BLAZE", 21, new int[]{2, 6, 4, 3,}, 17);
-	static EnumToolMaterial BlazeTool = EnumHelper.addToolMaterial("Blaze", 0, 400, 7F, 4, 14);
-	
+
 	
 	//Damage Addition//
     public static DamageSource causePebbleDamage(EntityPebble par0EntityArrow, Entity par1Entity) {
         return (new EntityDamageSourceIndirect("pebble", par0EntityArrow, par1Entity)).setProjectile();
     }
+    
+    
+    //Enum Armor//
+	static EnumArmorMaterial BlazeArmor = EnumHelper.addArmorMaterial("BLAZE", 21, new int[]{2, 6, 4, 3,}, 17);
 	
 	
 	//The Client and Common Proxy//
@@ -102,7 +82,7 @@ public class EverythingButThe {
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		
 		config.load();
-		
+/*		
 		int oreoreChromiumBlockID = config.getBlock("Chromium Ore Block ID", Configuration.CATEGORY_BLOCK, 120).getInt();
 		int oreMagnesiumBlockID = config.getBlock("Magnesium Ore Block ID", Configuration.CATEGORY_BLOCK, 121).getInt();
 		
@@ -115,7 +95,7 @@ public class EverythingButThe {
 		int blazeSwordID = config.getItem("Blaze Sword ID",  Configuration.CATEGORY_ITEM, 1205).getInt();
 		int slingshotID = config.getItem("Slingshot ID", Configuration.CATEGORY_ITEM, 1210).getInt();
 		int pebbleID = config.getItem("Pebble ID", Configuration.CATEGORY_ITEM, 1211).getInt();
-		
+*/		
 		int blazeHelmetID = config.getItem("Blaze Helmet ID", Configuration.CATEGORY_ITEM, 1206).getInt();
 		int blazePlateID = config.getItem("Blaze Platebody ID", Configuration.CATEGORY_ITEM, 1207).getInt();
 		int blazeLegsID = config.getItem("Blaze Helmet ID", Configuration.CATEGORY_ITEM, 1208).getInt();
@@ -129,21 +109,13 @@ public class EverythingButThe {
 	//The Mod//
 	@Init
 	public void load(FMLInitializationEvent event) {
-		//Defining Blocks//
-		oreChromium = new BlockOreChromium(oreChromiumBlockID, 0).setBlockName("oreoreChromium");
-		oreMagnesium = new BlockOreMagnesium(oreMagnesiumBlockID, 1).setBlockName("oreMagnesium");
+		
+		//Initialize Mod Blocks//
+		ModBlocks.init();
 		
 		
-		//Defining Items//
-		ingotChromium = new ItemIngotChromium(ingotChromiumID) .setIconIndex(4) .setItemName("ingotChromium");
-		ingotMagnesium = new ItemIngotMagnesium(ingotMagnesiumID) .setIconIndex(5) .setItemName("ingotMagnesium");
-		blazeClump = new ItemBlazeClump(blazeClumpID) .setIconIndex(0) .setItemName("blazeClump");
-		blazeIngot = new ItemBlazeIngot(blazeIngotID) .setIconIndex(1) .setItemName("blazeIngot");
-		silicon = new ItemSilicon(siliconID) .setIconIndex(3) .setItemName("silicon");
-		
-		blazeSword = new ItemBlazeSword(blazeSwordID, BlazeTool).setIconIndex(16) .setItemName("blazeSword"); 
-		slingshot = new ItemSlingshot(slingshotID) .setIconIndex(12) .setItemName("slingshot");
-		pebble = new ItemPebble(pebbleID) .setIconIndex(2) .setItemName("pebble");
+		//Initialize Mod Items//
+		ModItems.init();
 		
 		
 		//Defining Armor//
@@ -154,56 +126,29 @@ public class EverythingButThe {
 		blazeBoots = new ItemBlazeArmor(blazeBootsID, BlazeArmor, rendererBlaze, 3) .setIconIndex(20) .setItemName("blazeBoots");
 		
 		//Registering Blocks//
-		GameRegistry.registerBlock(oreChromium);
-		GameRegistry.registerBlock(oreMagnesium);
-		
 		GameRegistry.registerWorldGenerator(new WorldGen());
 		
 		
-		//Adding Recipes//
-		GameRegistry.addRecipe(new ItemStack(this.blazeClump), new Object[]{
-			"XX", "XX", 'X', Item.blazeRod
+		//The Recipes//
+/*		GameRegistry.addRecipe(new ItemStack(blazeHelmet), new Object[]{
+			"XXX", "X X", 'X', ModItems.ingotBlaze
 		});
-		
-		GameRegistry.addRecipe(new ItemStack(this.blazeHelmet), new Object[]{
-			"XXX", "X X", 'X', blazeIngot
+		GameRegistry.addRecipe(new ItemStack(blazePlate), new Object[]{
+			"X X", "XXX", "XXX", 'X', ModItems.ingotBlaze
 		});
-		GameRegistry.addRecipe(new ItemStack(this.blazePlate), new Object[]{
-			"X X", "XXX", "XXX", 'X', blazeIngot
+		GameRegistry.addRecipe(new ItemStack(blazeLegs), new Object[]{
+			"XXX", "X X", "X X", 'X', ModItems.ingotBlaze
 		});
-		GameRegistry.addRecipe(new ItemStack(this.blazeLegs), new Object[]{
-			"XXX", "X X", "X X", 'X', blazeIngot
+		GameRegistry.addRecipe(new ItemStack(blazeBoots), new Object[]{
+			"X X", "X X", 'X', ModItems.ingotBlaze
 		});
-		GameRegistry.addRecipe(new ItemStack(this.blazeBoots), new Object[]{
-			"X X", "X X", 'X', blazeIngot
-		});
-		GameRegistry.addRecipe(new ItemStack(this.blazeSword), new Object[]{
-			" X ", " X ", " Y ", 'X', blazeIngot, 'Y', Item.blazeRod
-		});
-		
-		GameRegistry.addSmelting(blazeClump.shiftedIndex, new ItemStack(this.blazeIngot), .1F);
-		GameRegistry.addSmelting(oreChromium.blockID, new ItemStack(this.ingotChromium), .1F);
-		GameRegistry.addSmelting(oreMagnesium.blockID, new ItemStack(this.ingotMagnesium), .1F);
-		
+*/		
 		
 		//The Proxy//
 		proxy.registerRenderThings();
 		
 		
 		//Registering Names - These Are The ACTUAL Names//
-		LanguageRegistry.addName(oreChromium, "Chromium Ore");
-		LanguageRegistry.addName(oreMagnesium, "Magnesium Ore");
-		
-		LanguageRegistry.addName(ingotChromium, "Chromium Ingot");
-		LanguageRegistry.addName(ingotMagnesium, "Magnesium Ingot");
-		LanguageRegistry.addName(blazeClump, "Blaze Clump");
-		LanguageRegistry.addName(blazeIngot, "Blaze Ingot");
-		LanguageRegistry.addName(silicon, "Silicon");
-		
-		LanguageRegistry.addName(blazeSword, "Blaze Sword"); 
-		LanguageRegistry.addName(slingshot, "Slingshot");
-		LanguageRegistry.addName(pebble, "Pebble");
-		
 		LanguageRegistry.addName(blazeHelmet, "Blaze Hemlet");
 		LanguageRegistry.addName(blazePlate, "Blaze Chestplate");
 		LanguageRegistry.addName(blazeLegs, "Blaze Legs");
@@ -213,5 +158,4 @@ public class EverythingButThe {
 		//Rendering Registry//
 		RenderingRegistry.registerEntityRenderingHandler(EntityPebble.class, new RenderPebble());
 	}
-       
 }

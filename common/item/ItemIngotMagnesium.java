@@ -1,10 +1,10 @@
-package ebt.common;
+package ebt.common.item;
 
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Item;
 
-public class ItemBlazeIngot extends Item {
-	public ItemBlazeIngot(int itemID) {
+public class ItemIngotMagnesium extends Item {
+	public ItemIngotMagnesium(int itemID) {
 		super(itemID);
 		maxStackSize = 64;
 		this.setCreativeTab(CreativeTabs.tabMaterials);

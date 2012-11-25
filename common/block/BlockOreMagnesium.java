@@ -1,4 +1,4 @@
-package ebt.common;
+package ebt.common.block;
 
 import java.util.Random;
 

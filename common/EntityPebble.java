@@ -18,6 +18,7 @@ import net.minecraft.src.Vec3;
 import net.minecraft.src.World;
 import cpw.mods.fml.common.Side;
 import cpw.mods.fml.common.asm.SideOnly;
+import ebt.common.item.ModItems;
 
 public class EntityPebble extends Entity implements IProjectile
 {
@@ -411,7 +412,7 @@ public class EntityPebble extends Entity implements IProjectile
         if (!this.worldObj.isRemote && this.inGround && this.arrowShake <= 0) {
             boolean var2 = this.canBePickedUp == 1 || this.canBePickedUp == 2 && par1EntityPlayer.capabilities.isCreativeMode;
 
-            if (this.canBePickedUp == 1 && !par1EntityPlayer.inventory.addItemStackToInventory(new ItemStack(EverythingButThe.pebble, 1))) {
+            if (this.canBePickedUp == 1 && !par1EntityPlayer.inventory.addItemStackToInventory(new ItemStack(ModItems.pebble, 1))) {
                 var2 = false;
             }
 

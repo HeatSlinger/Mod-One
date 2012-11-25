@@ -1,13 +1,13 @@
-package ebt.common;
+package ebt.common.item;
 
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Item;
 
-public class ItemIngotChromium extends Item {
-	public ItemIngotChromium(int itemID) {
+public class ItemPebble extends Item {
+	public ItemPebble(int itemID) {
 		super(itemID);
 		maxStackSize = 64;
-		this.setCreativeTab(CreativeTabs.tabMaterials);
+		this.setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
 	//This is the texture file//
