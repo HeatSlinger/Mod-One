@@ -1,0 +1,23 @@
+--Ores--
+Magnesium - Jesse - Done
+Chromium - Both - Done
+Mercury - 
+
+--Tools/Armor--
+Slingshot - Jesse - Done
+Shooting Slingshot - 
+Crossbow - Jesse - Done
+Shooting Crossbow - 
+Blaze armor - Jesse - Done
+Blaze Sword - Jesse - Done
+
+--Items--
+Blaze Ingot - Jesse - Done
+Obsidian Hammer - Jesse - Done
+Silicon - Jesse - Done
+Anti-fire Stick (Fire resistance potion + stick) - Jesse - Done
+Phosphorus Torches - Jesse - Done
+Blaze Pebble - Jesse - Done
+Pebble - Jesse - Done
+
+--Machines--

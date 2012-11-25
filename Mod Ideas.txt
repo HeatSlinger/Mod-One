@@ -17,12 +17,12 @@ Battleaxe										NO
 Halberd											NO
 Scythe											NO
 Blaze armor to survive lava								YES
-Optimus' sword										N/A
-Thor's hammer										YES
-Megatron's battle axe									N/A
-Loki's staff										YES
-Helmet to breathe underwater								N/A
-Power armour										YES
+Optimus' sword										NO
+Thor's hammer										NO
+Megatron's battle axe									NO
+Loki's staff										NO
+Helmet to breathe underwater								NO
+Power armour										NO
 Blaze Sword										YES
 
 --Items--
