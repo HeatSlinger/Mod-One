@@ -19,8 +19,9 @@ Magnesium Ingot - Jesse - Done
 Obsidian Hammer - Jesse - Done
 Silicon - Jesse - Done
 Anti-fire Stick (Fire resistance potion + stick) - Jesse - Done
-Phosphorus Torches - Jesse - Done
 Blaze Pebble - Jesse - Done
 Pebble - Jesse - Done
+Magnesium Dust - 
+Magnesium Torch - 
 
 --Machines--

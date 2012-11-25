@@ -4,20 +4,19 @@ Chromium - Nathan - Done
 Mercury - 
 
 --Tools/Armor--
-Slingshot - 
+Slingshot - Nathan - In Progress
+Pebble - Nathan - In Progress
 Crossbow -
 Blaze armor - Both - In Progress
-Thor's Hammer - 
-Loki's Staff - 
-Power Armor - 
-Blaze Sword - Nathan - Done
+Blaze Sword - Nathan - In Progress
 
 --Items--
 Blaze Ingots - Nathan - Done
 Obsidian Hammer - 
 Silicon - Nathan - Done
-Anti-fire Stick (Fire resistance potion + stick) - 
-Phosphorus Torches - 
+Anti-fire Stick - 
 Blaze Pebble - 
+Magnesium Dust - 
+Magnesium Torch - 
 
 --Machines--

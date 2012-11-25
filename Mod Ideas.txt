@@ -29,8 +29,10 @@ Blaze Sword										YES
 Blaze ingots										YES
 Obsidian hammer item to crush stone into pebbles in crafting square			YES
 Anti-fire stick										YES
-Phosphorus Torches									YES
+Phosphorus Torches									NO
 Blaze Pebbles (Blaze powder + pebble) 							YES
+Magnesium Torches									YES
+Magnesium Dust (Obsidian Hammer + Magnesium Ingot)					YES
 
 --Machines/Blocks--
 Macerator to turn stone into pebbles for slingshot					NO
