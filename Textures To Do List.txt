@@ -8,11 +8,14 @@ Slingshot - Jesse - Done
 Shooting Slingshot - Jesse - Done
 Crossbow - Jesse - Done
 Shooting Crossbow - 
-Blaze armor - Jesse - Done
+Blaze Armor - Jesse - Done
 Blaze Sword - Jesse - Done
+Blaze Armor Sprites - Jesse - Done
 
 --Items--
 Blaze Ingot - Jesse - Done
+Chromium Ingot - Jesse - Done
+Magnesium Ingot - Jesse - Done
 Obsidian Hammer - Jesse - Done
 Silicon - Jesse - Done
 Anti-fire Stick (Fire resistance potion + stick) - Jesse - Done
