@@ -14,7 +14,7 @@ public class ItemBlazeSword extends ItemSword {
 	public ItemBlazeSword(int itemID, EnumToolMaterial enumtoolmaterial) {
 		super(itemID, enumtoolmaterial);
 		this.setCreativeTab(CreativeTabs.tabCombat);
-		setMaxDamage(1000);
+		this.setMaxDamage(1000);
 		damage = 7;
 		enchantability = 14;
 	}

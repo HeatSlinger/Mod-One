@@ -1,12 +1,18 @@
 package ebt.common;
  
 import net.minecraft.src.Block;
+import net.minecraft.src.DamageSource;
+import net.minecraft.src.Entity;
+import net.minecraft.src.EntityArrow;
+import net.minecraft.src.EntityDamageSourceIndirect;
 import net.minecraft.src.EnumArmorMaterial;
 import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
+import net.minecraft.src.RenderArrow;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.EnumHelper;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -19,6 +25,7 @@ import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import ebt.client.RenderPebble;
 
 
 @Mod(modid = "mod", name = "Everything But The", version = "1.0")
@@ -42,6 +49,7 @@ public class EverythingButThe {
 	public static Item blazeClump;
 	public static Item blazeIngot;
 	public static Item silicon;
+	public static Item pebble;
 	
 	public static Item blazeSword;
 	public static Item slingshot;
@@ -63,6 +71,7 @@ public class EverythingButThe {
 	public int blazeClumpID = 1202;
 	public int blazeIngotID = 1203;
 	public int siliconID = 1204;
+	public int pebbleID = 1211;
 	
 	public int blazeSwordID = 1205;
 	public int slingshotID = 1210;
@@ -76,6 +85,12 @@ public class EverythingButThe {
 	//Materials//
 	static EnumArmorMaterial BlazeArmor = EnumHelper.addArmorMaterial("BLAZE", 21, new int[]{2, 6, 4, 3,}, 17);
 	static EnumToolMaterial BlazeTool = EnumHelper.addToolMaterial("Blaze", 0, 400, 7F, 4, 14);
+	
+	
+	//Damage Addition//
+    public static DamageSource causePebbleDamage(EntityPebble par0EntityArrow, Entity par1Entity) {
+        return (new EntityDamageSourceIndirect("pebble", par0EntityArrow, par1Entity)).setProjectile();
+    }
 	
 	
 	//The Client and Common Proxy//
@@ -99,6 +114,7 @@ public class EverythingButThe {
 		
 		int blazeSwordID = config.getItem("Blaze Sword ID",  Configuration.CATEGORY_ITEM, 1205).getInt();
 		int slingshotID = config.getItem("Slingshot ID", Configuration.CATEGORY_ITEM, 1210).getInt();
+		int pebbleID = config.getItem("Pebble ID", Configuration.CATEGORY_ITEM, 1211).getInt();
 		
 		int blazeHelmetID = config.getItem("Blaze Helmet ID", Configuration.CATEGORY_ITEM, 1206).getInt();
 		int blazePlateID = config.getItem("Blaze Platebody ID", Configuration.CATEGORY_ITEM, 1207).getInt();
@@ -126,15 +142,16 @@ public class EverythingButThe {
 		silicon = new ItemSilicon(siliconID) .setIconIndex(3) .setItemName("silicon");
 		
 		blazeSword = new ItemBlazeSword(blazeSwordID, BlazeTool).setIconIndex(16) .setItemName("blazeSword"); 
-		slingshot = new ItemSlingshot(slingshotID) .setIconIndex(17) .setItemName("slingshot");
+		slingshot = new ItemSlingshot(slingshotID) .setIconIndex(12) .setItemName("slingshot");
+		pebble = new ItemPebble(pebbleID) .setIconIndex(2) .setItemName("pebble");
 		
 		
 		//Defining Armor//
 		int rendererBlaze = proxy.addArmor("blaze");
-		blazeHelmet = new ItemBlazeArmor(blazeHelmetID, BlazeArmor, rendererBlaze, 0) .setIconIndex(0) .setItemName("blazeHelmet");
-		blazePlate = new ItemBlazeArmor(blazePlateID, BlazeArmor, rendererBlaze, 1) .setIconIndex(0) .setItemName("blazePlate");
-		blazeLegs = new ItemBlazeArmor(blazeLegsID, BlazeArmor, rendererBlaze, 2) .setIconIndex(0) .setItemName("blazeLegs");
-		blazeBoots = new ItemBlazeArmor(blazeBootsID, BlazeArmor, rendererBlaze, 3) .setIconIndex(0) .setItemName("blazeBoots");
+		blazeHelmet = new ItemBlazeArmor(blazeHelmetID, BlazeArmor, rendererBlaze, 0) .setIconIndex(17) .setItemName("blazeHelmet");
+		blazePlate = new ItemBlazeArmor(blazePlateID, BlazeArmor, rendererBlaze, 1) .setIconIndex(18) .setItemName("blazePlate");
+		blazeLegs = new ItemBlazeArmor(blazeLegsID, BlazeArmor, rendererBlaze, 2) .setIconIndex(19) .setItemName("blazeLegs");
+		blazeBoots = new ItemBlazeArmor(blazeBootsID, BlazeArmor, rendererBlaze, 3) .setIconIndex(20) .setItemName("blazeBoots");
 		
 		//Registering Blocks//
 		GameRegistry.registerBlock(oreChromium);
@@ -185,12 +202,16 @@ public class EverythingButThe {
 		
 		LanguageRegistry.addName(blazeSword, "Blaze Sword"); 
 		LanguageRegistry.addName(slingshot, "Slingshot");
+		LanguageRegistry.addName(pebble, "Pebble");
 		
 		LanguageRegistry.addName(blazeHelmet, "Blaze Hemlet");
 		LanguageRegistry.addName(blazePlate, "Blaze Chestplate");
 		LanguageRegistry.addName(blazeLegs, "Blaze Legs");
 		LanguageRegistry.addName(blazeBoots, "Blaze Boots");
-
+		
+		
+		//Rendering Registry//
+		RenderingRegistry.registerEntityRenderingHandler(EntityPebble.class, new RenderPebble());
 	}
        
 }

@@ -13,6 +13,7 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public int addArmor(String armorBlaze) {
-	return RenderingRegistry.addNewArmourRendererPrefix(armorBlaze);
+		return RenderingRegistry.addNewArmourRendererPrefix(armorBlaze);
 	}
+	
 }
