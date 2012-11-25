@@ -5,7 +5,7 @@ Mercury -
 
 --Tools/Armor--
 Slingshot - Jesse - Done
-Shooting Slingshot - 
+Shooting Slingshot - Jesse - Done
 Crossbow - Jesse - Done
 Shooting Crossbow - 
 Blaze armor - Jesse - Done
