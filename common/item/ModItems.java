@@ -9,7 +9,6 @@ import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
 import net.minecraftforge.common.EnumHelper;
-import ebt.common.EverythingButThe;
 
 public class ModItems {
 	
@@ -28,12 +27,12 @@ public class ModItems {
 	public static void init() {
 		
 		//Defining Items//
-		ingotChromium = new ItemIngotChromium(ItemIds.INGOT_CHROMIUM_DEFAULT) .setIconIndex(4) .setItemName("ingotChromium");
-		ingotMagnesium = new ItemIngotMagnesium(ItemIds.INGOT_MAGNESIUM_DEFAULT) .setIconIndex(5) .setItemName("ingotMagnesium");
-		clumpBlaze = new ItemClumpBlaze(ItemIds.BLAZE_CLUMP_DEFAULT) .setIconIndex(0) .setItemName("clumpBlaze");
-		ingotBlaze = new ItemIngotBlaze(ItemIds.BLAZE_INGOT_DEFAULT) .setIconIndex(1) .setItemName("ingotBlaze");
-		silicon = new ItemSilicon(ItemIds.SILICON_DEFAULT) .setIconIndex(3) .setItemName("silicon");
-		pebble = new ItemPebble(ItemIds.PEBBLE_DEFAULT) .setIconIndex(2) .setItemName("pebble");
+		ingotChromium = new ItemIngotChromium(ItemIds.INGOT_CHROMIUM) .setIconIndex(4) .setItemName("ingotChromium");
+		ingotMagnesium = new ItemIngotMagnesium(ItemIds.INGOT_MAGNESIUM) .setIconIndex(5) .setItemName("ingotMagnesium");
+		clumpBlaze = new ItemClumpBlaze(ItemIds.BLAZE_CLUMP) .setIconIndex(0) .setItemName("clumpBlaze");
+		ingotBlaze = new ItemIngotBlaze(ItemIds.BLAZE_INGOT) .setIconIndex(1) .setItemName("ingotBlaze");
+		silicon = new ItemSilicon(ItemIds.SILICON) .setIconIndex(3) .setItemName("silicon");
+		pebble = new ItemPebble(ItemIds.PEBBLE) .setIconIndex(2) .setItemName("pebble");
 		
 		blazeSword = new ItemBlazeSword(ItemIds.BLAZE_SWORD_DEFAULT, BlazeTool).setIconIndex(16) .setItemName("blazeSword"); 
 		slingshot = new ItemSlingshot(ItemIds.SLINGSHOT_DEFAULT) .setIconIndex(12) .setItemName("slingshot");

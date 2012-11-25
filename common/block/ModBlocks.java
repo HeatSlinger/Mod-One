@@ -15,8 +15,8 @@ public class ModBlocks {
 	
 	public static void init() {
 		
-		oreChromium = new BlockOreChromium(BlockIds.ORE_CHROMIUM_DEFAULT, 0).setBlockName("oreoreChromium");
-		oreMagnesium = new BlockOreMagnesium(BlockIds.ORE_MAGNESIUM_DEFAULT, 1).setBlockName("oreMagnesium");
+		oreChromium = new BlockOreChromium(BlockIds.ORE_CHROMIUM, 0).setBlockName("oreoreChromium");
+		oreMagnesium = new BlockOreMagnesium(BlockIds.ORE_MAGNESIUM, 1).setBlockName("oreMagnesium");
 		
 		GameRegistry.registerBlock(oreChromium);
 		GameRegistry.registerBlock(oreMagnesium);

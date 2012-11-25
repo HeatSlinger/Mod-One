@@ -11,6 +11,9 @@ public class ItemIds {
 	public static int SLINGSHOT_DEFAULT = 26006;
 	public static int BLAZE_SWORD_DEFAULT = 26007;
 	public static int BLAZE_HELMET_DEFAULT = 26008;
+	public static int BLAZE_CHEST_DEFAULT = 26009;
+	public static int BLAZE_LEGS_DEFAULT = 26010;
+	public static int BLAZE_BOOTS_DEFAULT = 26011;
 	
 	public static int INGOT_CHROMIUM;
 	public static int INGOT_MAGNESIUM;
@@ -21,4 +24,7 @@ public class ItemIds {
 	public static int SLINGSHOT;
 	public static int BLAZE_SWORD;
 	public static int BLAZE_HELMET;
+	public static int BLAZE_CHEST;
+	public static int BLAZE_LEGS;
+	public static int BLAZE_BOOTS;
 }

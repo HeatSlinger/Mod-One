@@ -2,6 +2,8 @@ package ebt.common.block;
 
 import java.util.Random;
 
+import ebt.common.lib.Reference;
+
 import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Material;
@@ -15,7 +17,7 @@ public class BlockOreChromium extends Block {
 	
 	//This is the texture file//
 	public String getTextureFile(){
-		return "/ebt.client/resources/terrain.png";
+		return Reference.BLOCK_SPRITE_SHEET;
 	}
 	
 }

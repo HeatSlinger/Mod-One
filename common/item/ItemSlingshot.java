@@ -2,6 +2,7 @@ package ebt.common.item;
 
 import ebt.common.EntityPebble;
 import ebt.common.EverythingButThe;
+import ebt.common.lib.Reference;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Enchantment;
 import net.minecraft.src.EnchantmentHelper;
@@ -128,7 +129,7 @@ public class ItemSlingshot extends Item {
 	    }
     
     public String getTextureFile() {
-    	return "/ebt.client/resources/items.png";
+    	return Reference.ITEM_SPRITE_SHEET;
     }
 
 }

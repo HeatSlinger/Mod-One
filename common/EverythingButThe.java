@@ -30,6 +30,7 @@ import ebt.common.block.ModBlocks;
 import ebt.common.block.BlockOreChromium;
 import ebt.common.block.BlockOreMagnesium;
 import ebt.common.core.CommonProxy;
+import ebt.common.core.handlers.ConfigurationHandler;
 import ebt.common.item.ItemBlazeArmor;
 import ebt.common.item.ItemBlazeSword;
 import ebt.common.item.ItemIngotChromium;
@@ -38,6 +39,8 @@ import ebt.common.item.ItemPebble;
 import ebt.common.item.ItemSilicon;
 import ebt.common.item.ItemSlingshot;
 import ebt.common.item.ModItems;
+import ebt.common.lib.ConfigurationSettings;
+import ebt.common.lib.ItemIds;
 
 
 @Mod(modid = "mod", name = "Everything But The", version = "1.0")
@@ -79,29 +82,8 @@ public class EverythingButThe {
 	
 	@PreInit
 	public void PreLoad(FMLPreInitializationEvent event) {		
-		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		
-		config.load();
-/*		
-		int oreoreChromiumBlockID = config.getBlock("Chromium Ore Block ID", Configuration.CATEGORY_BLOCK, 120).getInt();
-		int oreMagnesiumBlockID = config.getBlock("Magnesium Ore Block ID", Configuration.CATEGORY_BLOCK, 121).getInt();
-		
-		int ingotChromiumID = config.getItem("Chromium Ingot ID", Configuration.CATEGORY_ITEM, 1200).getInt();
-		int ingotMagnesiumID = config.getItem("Magnesium Ingot ID", Configuration.CATEGORY_ITEM, 1201).getInt();
-		int blazeClumpID = config.getItem("Blaze Clump ID", Configuration.CATEGORY_ITEM, 1202).getInt();
-		int blazeIngotID = config.getItem("Blaze Ingot ID", Configuration.CATEGORY_ITEM, 1203).getInt();
-		int siliconID = config.getItem("Silicon ID", Configuration.CATEGORY_ITEM, 1204).getInt();
-		
-		int blazeSwordID = config.getItem("Blaze Sword ID",  Configuration.CATEGORY_ITEM, 1205).getInt();
-		int slingshotID = config.getItem("Slingshot ID", Configuration.CATEGORY_ITEM, 1210).getInt();
-		int pebbleID = config.getItem("Pebble ID", Configuration.CATEGORY_ITEM, 1211).getInt();
-*/		
-		int blazeHelmetID = config.getItem("Blaze Helmet ID", Configuration.CATEGORY_ITEM, 1206).getInt();
-		int blazePlateID = config.getItem("Blaze Platebody ID", Configuration.CATEGORY_ITEM, 1207).getInt();
-		int blazeLegsID = config.getItem("Blaze Helmet ID", Configuration.CATEGORY_ITEM, 1208).getInt();
-		int blazeBootsID = config.getItem("Blaze Helmet ID", Configuration.CATEGORY_ITEM, 1209).getInt();
-		
-		config.save();
 	}
 	
 	
@@ -120,10 +102,10 @@ public class EverythingButThe {
 		
 		//Defining Armor//
 		int rendererBlaze = proxy.addArmor("blaze");
-		blazeHelmet = new ItemBlazeArmor(blazeHelmetID, BlazeArmor, rendererBlaze, 0) .setIconIndex(17) .setItemName("blazeHelmet");
-		blazePlate = new ItemBlazeArmor(blazePlateID, BlazeArmor, rendererBlaze, 1) .setIconIndex(18) .setItemName("blazePlate");
-		blazeLegs = new ItemBlazeArmor(blazeLegsID, BlazeArmor, rendererBlaze, 2) .setIconIndex(19) .setItemName("blazeLegs");
-		blazeBoots = new ItemBlazeArmor(blazeBootsID, BlazeArmor, rendererBlaze, 3) .setIconIndex(20) .setItemName("blazeBoots");
+		blazeHelmet = new ItemBlazeArmor(ItemIds.BLAZE_HELMET, BlazeArmor, rendererBlaze, 0) .setIconIndex(17) .setItemName("blazeHelmet");
+		blazePlate = new ItemBlazeArmor(ItemIds.BLAZE_CHEST, BlazeArmor, rendererBlaze, 1) .setIconIndex(18) .setItemName("blazePlate");
+		blazeLegs = new ItemBlazeArmor(ItemIds.BLAZE_LEGS, BlazeArmor, rendererBlaze, 2) .setIconIndex(19) .setItemName("blazeLegs");
+		blazeBoots = new ItemBlazeArmor(ItemIds.BLAZE_BOOTS, BlazeArmor, rendererBlaze, 3) .setIconIndex(20) .setItemName("blazeBoots");
 		
 		//Registering Blocks//
 		GameRegistry.registerWorldGenerator(new WorldGen());

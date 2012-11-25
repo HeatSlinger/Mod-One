@@ -1,5 +1,6 @@
 package ebt.common.item;
 
+import ebt.common.lib.Reference;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Entity;
 import net.minecraft.src.EntityLiving;
@@ -36,6 +37,6 @@ public class ItemBlazeSword extends ItemSword {
 	
 	//This is the texture file//
 	public String getTextureFile() {
-		return "/ebt.client/resources/items.png";
+		return Reference.ITEM_SPRITE_SHEET;
 	}
 }
