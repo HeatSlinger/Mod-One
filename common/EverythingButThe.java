@@ -130,7 +130,7 @@ public class EverythingButThe {
 		
 		
 		//The Recipes//
-/*		GameRegistry.addRecipe(new ItemStack(blazeHelmet), new Object[]{
+		GameRegistry.addRecipe(new ItemStack(blazeHelmet), new Object[]{
 			"XXX", "X X", 'X', ModItems.ingotBlaze
 		});
 		GameRegistry.addRecipe(new ItemStack(blazePlate), new Object[]{
@@ -142,7 +142,7 @@ public class EverythingButThe {
 		GameRegistry.addRecipe(new ItemStack(blazeBoots), new Object[]{
 			"X X", "X X", 'X', ModItems.ingotBlaze
 		});
-*/		
+
 		
 		//The Proxy//
 		proxy.registerRenderThings();
