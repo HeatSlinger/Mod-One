@@ -1,14 +1,13 @@
 --Ores--
 Magnesium - Nathan - Done
 Chromium - Nathan - Done
-Mercury - 
 
 --Tools/Armor--
 Slingshot - Nathan - In Progress
 Pebble - Nathan - In Progress
 Crossbow -
 Blaze armor - Both - In Progress
-Blaze Sword - Nathan - In Progress
+Blaze Sword - Nathan - Done
 
 --Items--
 Blaze Ingots - Nathan - Done

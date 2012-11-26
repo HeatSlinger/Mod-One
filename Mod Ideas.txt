@@ -4,8 +4,8 @@ Magnesium 										YES
 Chromium 										YES
 Nickel											NO
 Flourine										N/A
-Mercury											YES
-Silicon											Yes
+Mercury											NO
+Silicon											YES
 Carbon Monoxide										NO
 Asphalt											NO
 

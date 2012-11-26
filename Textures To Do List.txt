@@ -1,7 +1,8 @@
---Ores--
+--Ores/Blocks--
 Magnesium - Jesse - Done
 Chromium - Both - Done
-Mercury - 
+Magnesium Block - Jesse - Done
+Chromium Block - Jesse - Done
 
 --Tools/Armor--
 Slingshot - Jesse - Done
